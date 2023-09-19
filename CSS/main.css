@@ -1,0 +1,39 @@
+#banner {
+    width:1200px;
+    background-color:coral;
+    height: 200px;
+    float:left;
+    clear:both
+}
+#nav { 
+    width:200px;
+    background-color:beige;
+    height: 500px;
+    float:left
+}
+#content {
+    width:800px;
+    background-color:white;
+    float:left
+}
+#supporting {
+    width:200px;
+    background-color:aliceblue;
+    height: 500px;
+    float:left
+}
+#footer {
+    width:1200px;
+    background-color:grey;
+    color: white;
+    clear:both;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+#content, #nav, #supporting{
+    margin-top: 100px;
+}
