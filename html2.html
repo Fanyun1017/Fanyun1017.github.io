@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多區段網頁</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            margin-top: -20px; /* 移除上方的留白 */
+            position: relative;
+        }
+
+        header {
+            background-color: #16a4b3;
+            color: black;
+            padding: 20px;
+            margin: 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            position: fixed;
+            width: 100%;
+            top: 60px; /* 位於首頁 Banner 下方，一開始就在畫面裡 */
+            background-color: #fff;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: top 0.3s; /* 動畫效果 */
+        }
+
+        nav a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+
+        section {
+            margin-top: 80px; /* 調整 margin-top 以確保超連結欄位不會擋住 section 內容 */
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        section .orange-banner {
+            background-color: #ff5733;
+            color: white;
+            padding: 20px;
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+
+        section .content {
+            background-color: #f0f0f0;
+            padding: 2rem;
+            min-height: calc(200vh - 8rem);
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        section .content .small-block {
+            background-color: #dcdcdc;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        /* 移除 body 和 header 的左右邊距 */
+        body, header {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>這裡是Banner</h1>
+    </header>
+
+    <nav>
+        <a href="#">首頁</a>
+        <a href="#section1">區段 1</a>
+        <a href="#section2">區段 2</a>
+        <a href="#section3">區段 3</a>
+    </nav>
+
+    <section id="section1">
+        <div class="orange-banner">
+            <h2>區段 1 Banner</h2>
+        </div>
+        <div class="content">
+            <div class="small-block">
+                <h2>區段 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac lorem nec odio lacinia fringilla. In efficitur augue vel sapien ultricies, a ultrices risus pellentesque. Integer vestibulum ante a nunc malesuada, vel facilisis mauris facilisis.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="section2">
+        <div class="orange-banner">
+            <h2>區段 2 Banner</h2>
+        </div>
+        <div class="content">
+            <div class="small-block">
+                <h2>區段 2</h2>
+                <p>Curabitur fermentum leo nec erat auctor, sit amet semper justo egestas. Fusce eu mi id turpis fermentum gravida. Etiam quis nisl id odio tincidunt venenatis. Nulla facilisi. Vestibulum bibendum risus nec venenatis laoreet.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="section3">
+        <div class="orange-banner">
+            <h2>區段 3 Banner</h2>
+        </div>
+        <div class="content">
+            <div class="small-block">
+                <h2>區段 3</h2>
+                <p>Proin congue dolor vitae tortor bibendum, in commodo est lobortis. Nam eget sem quis elit tincidunt dignissim vel nec augue. Ut venenatis metus et arcu vestibulum, a dictum libero tincidunt. Vivamus non lacus non leo consectetur vulputate.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var header = document.querySelector('header');
+        var nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', function() {
+            var headerHeight = header.offsetHeight;
+            if (window.scrollY >= headerHeight) {
+                nav.style.top = '0';
+            } else {
+                nav.style.top = headerHeight - window.scrollY + 'px';
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
